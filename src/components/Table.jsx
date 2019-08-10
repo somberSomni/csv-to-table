@@ -9,10 +9,10 @@ const TableContainer = styled.div`
 `;
 const Row = styled.tr`
     color: ${props => props.first ? 'white' : 'black'}
-    background: ${props => props.first ? '#666' : '#CCC'};
+    background: ${props => props.first ? '#666' : 'white'};
     transition: background 500ms;
     &:hover {
-        background: ${props => props.first ? '#666' : '#AAA'};
+        background: ${props => props.first ? '#666' : '#CCC'};
     }
 `;
 const HeadCol = styled.th`
