@@ -17,10 +17,11 @@
     "animejs": "^3.1.0",
     "axios": "^0.19.0",
     "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
     "react-scripts": "^3.0.1",
     "react-transition-group": "^4.2.1",
     "styled-components": "^4.3.2"
@@ -57,9 +58,5 @@
     "react"
   ],
   "author": "Somber Somni",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/somberSomni/csv-to-table/issues"
-  },
-  "homepage": "https://github.com/somberSomni/csv-to-table#readme"
+  "license": "ISC"
 }

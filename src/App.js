@@ -1,11 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import styled from 'styled-components';
-import axios from 'axios';
+import React from 'react';
 //components
-import Home from './pages/Home.jsx';
-import MoviePage from './pages/MoviePage.jsx';
-
+import Form from './components/Form.jsx';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faHumidity
@@ -16,16 +11,10 @@ import './App.css';
 library.add(
   faMapMarkerCheck
 );
-
 export default function App() {
   return (
     <div className='App'>
-      <Router>
-        <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/movie/:id' component={MoviePage}/>
-        </Switch>
-      </Router>
+      <Form />
     </div>
   );
 }
