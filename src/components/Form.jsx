@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
@@ -10,29 +11,28 @@ const useStyles = makeStyles(theme => ({
         display: 'none',
     },
 }));
-export default function Form() {
+function Form({dispatch}) {
     const classes = useStyles();
     const fileRef = useRef(null);
-    const [tableData, setTableData] = useState([]);
+    const [staticReader, setReader] = useState(null);
+    useEffect(() => {
+        const reader = new FileReader();
+        reader.addEventListener('load', handleLoad);
+        setReader(reader);
+    }, [])
+
+    function handleLoad (e) {
+        const { result } = e.target;
+        const payload = result.split("\n").map(each => each.split(','));
+        dispatch({ type: 'SET_TABLE_DATA', payload });
+        console.log(result);
+    }
+
     function handleFile() {
-        console.log('running');
         if (fileRef) {
             console.log(fileRef)
             const file = fileRef.current.files[0];
-            const reader = new FileReader();
-            reader.readAsText(file);
-            reader.onload = function (e) {
-                const { result } = e.target;
-                const data = result.split("\n").map(each => each.split(','));
-                setTableData(data);
-                console.log(result, typeof result);
-            }
-            reader.onerror = function (e) {
-                console.log(e);
-            }
-            reader.onabort = function (e) {
-                console.log('file reader aborted funcitons');
-            }
+            staticReader.readAsText(file);
             console.log(file);
         }
     }
@@ -57,3 +57,5 @@ export default function Form() {
         </div>
     )
 }
+
+export default connect()(Form);

@@ -1,6 +1,7 @@
 import React from 'react';
 //components
 import Form from './components/Form.jsx';
+import Table from './components/Table.jsx';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faHumidity
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <div className='App'>
       <Form />
+      <Table />
     </div>
   );
 }
