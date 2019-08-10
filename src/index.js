@@ -12,12 +12,13 @@ const initialState = {
         ["Year", "Make", "Model"],
         ["1997", "Ford", "E350"],
         ["2000", "Mercury", "Cougar"]
-    ]
+    ],
+    rowNum: 0,
+    rowByTen: 0
 }
 const store = createStore(
     reducer, 
-    initialState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    initialState
 );
 const ReduxApp = () => (
     <Provider store={store}>

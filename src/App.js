@@ -5,10 +5,11 @@ import Form from './components/Form.jsx';
 import Table from './components/Table.jsx';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faExchangeAlt } from '@fortawesome/pro-regular-svg-icons';
-import { faFileCsv, faTable } from '@fortawesome/pro-light-svg-icons';
+import { faFileCsv, faTable, faArrowSquareUp } from '@fortawesome/pro-light-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './App.css';
 library.add(
+  faArrowSquareUp,
   faFileCsv,
   faTable,
   faExchangeAlt
@@ -40,7 +41,7 @@ export default function App() {
     <div className='App'>
       <Title>
         <HeadTitle>
-          <h1 style={{ fontSize: '3em'}}>CSV to Table</h1>
+          <h1 style={{ fontSize: '3em' }}>CSV to Table</h1>
           <FontAwesomeIcon size='4x' style={fAStyle} icon={['fal', 'file-csv']} />
           <FontAwesomeIcon size='4x' style={fAStyle} icon={['far', 'exchange-alt']} />
           <FontAwesomeIcon size='4x' style={fAStyle} icon={['fal', 'table']} />

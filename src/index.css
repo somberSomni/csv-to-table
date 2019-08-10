@@ -11,7 +11,7 @@ body {
 }
 
 table, th, td {
-  border: 2px solid black;
+  border: 2px solid #666;
   border-collapse: collapse;
 }
 
