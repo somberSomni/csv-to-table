@@ -46,7 +46,7 @@ export default function App() {
           <FontAwesomeIcon size='4x' style={fAStyle} icon={['far', 'exchange-alt']} />
           <FontAwesomeIcon size='4x' style={fAStyle} icon={['fal', 'table']} />
         </HeadTitle>
-        <h5 style={{ marginTop: -10 }}>Can take a csv file and turns it into a table</h5>
+        <h5 style={{ marginTop: -10, color: '#222' }}>Can take a csv file and turns it into a table</h5>
       </Title>
       <Form />
       <Table />
